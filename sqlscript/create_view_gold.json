@@ -1,0 +1,17 @@
+{
+	"name": "create_view_gold",
+	"properties": {
+		"content": {
+			"query": "create VIEW gold.Subcategories\nAS\nSELECT * from OPENROWSET \n(\n    BULK'https://awstoragedatalake29.blob.core.windows.net/silver/Product_Subcategories/',\n    FORMAT = 'PARQUET'\n) as query1\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "awdatabase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
